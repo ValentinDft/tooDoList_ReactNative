@@ -15,6 +15,12 @@ export default function App() {
     Keyboard.dismiss();
   }
 
+  let reverseDataDelete = index => {
+    let copyListe = [...listeTache];
+    copyListe.splice(index, 1);
+    setListeTache(copyListe);
+  }
+
   return (
     <View style={styles.container}>
 
@@ -25,7 +31,7 @@ export default function App() {
       <View style={{margin: 20}}>
         {listeTache.length > 0 ? listeTache.map((tache, i) => {
           return(
-            <Task key={i} titreTache={tache}/>
+            <Task key={i} titreTache={tache} position={i} clickDelete={reverseDataDelete}/>
           )
         }) : <Text style={{fontSize: 18, textAlign: "center", paddingVertical: "50%"}}>Aucune tache</Text>}
       </View>
@@ -43,7 +49,7 @@ export default function App() {
 
         <TouchableOpacity 
           style={{backgroundColor: "white", height: 40, width: 40, borderRadius: 100, justifyContent: "center", alignItems: "center"}}
-          onPress={clickAdd}
+          onPress={() => clickAdd()}
         >
           <Text style={{fontSize: 22, fontWeight: "bold"}}>+</Text>
         </TouchableOpacity>
