@@ -1,16 +1,19 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Task() {
+export default function Task(props) {
     return (
-        <View style={styles.task}>
-            <Text style={{fontWeight: "bold", fontSize: 18, color: "white"}}>Je suis une tache</Text>
+        <View style={styles.item}>
+            <Text style={{fontWeight: "bold", fontSize: 18, color: "white"}}>{props.title}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    task: {
-      backgroundColor: "#ff7675"
+    item: {
+      backgroundColor: "#ff7675",
+      padding: 15,
+      borderRadius: 10,
+      marginBottom: 20
     },
   });
