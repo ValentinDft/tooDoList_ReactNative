@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Task(props) {
     return (
         <View style={styles.item}>
-            <Text style={{fontWeight: "bold", fontSize: 18, color: "white"}}>{props.title}</Text>
+            <Text style={{fontWeight: "bold", fontSize: 18, color: "white"}}>{props.titreTache}</Text>
         </View>
     )
 }
