@@ -1,6 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
+// Icons
+import { Ionicons } from '@expo/vector-icons'; 
+
 export default function Task(props) {
 
     let clickDelete = index => {
@@ -12,10 +15,10 @@ export default function Task(props) {
             <Text style={{fontWeight: "bold", fontSize: 18, color: "white"}}>{props.titreTache}</Text>
             
             <TouchableOpacity 
-                style={{backgroundColor: "white", height: 30, width: 30, borderRadius: 100, justifyContent: "center", alignItems: "center"}}
+                style={{backgroundColor: "white", height: 32, width: 32, borderRadius: 100, justifyContent: "center", alignItems: "center"}}
                 onPress={() => clickDelete(props.position)}
             >
-                <Text style={{fontSize: 18, fontWeight: "bold"}}>-</Text>
+                <Ionicons name="trash" size={22} color="black" />
             </TouchableOpacity>
         </View>
     )

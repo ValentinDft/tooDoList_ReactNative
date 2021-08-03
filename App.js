@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import { ScrollView, StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Keyboard } from 'react-native';
 import Task from './components/Task';
 
+// Icons
+import { Ionicons } from '@expo/vector-icons'; 
+
 export default function App() {
 
   const [tache, setTache] = useState(null);
@@ -29,8 +32,8 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <View style={{paddingTop: "15%", paddingHorizontal: 15}}>
-        <Text style={{fontWeight: "bold", fontSize: 20, color: "white"}}>Tàche à effectuer aujourd'hui !</Text>
+      <View style={{paddingTop: "12%", paddingHorizontal: 15}}>
+        <Text style={{fontWeight: "bold", fontSize: 20, color: "white"}}>Tâche à effectuer aujourd'hui !</Text>
       </View>
 
       <View style={{margin: 20, height: "75%"}}>
@@ -39,7 +42,7 @@ export default function App() {
             return(
               <Task key={i} titreTache={tache} position={i} clickDelete={reverseDataDelete}/>
             )
-          }) : <Text style={{fontSize: 18, textAlign: "center", paddingVertical: "50%"}}>Aucune tache</Text>}
+          }) : <Text style={{fontSize: 18, textAlign: "center", paddingVertical: "50%"}}>Aucune tâche</Text>}
         </ScrollView>
       </View>
 
@@ -48,7 +51,7 @@ export default function App() {
         style={{position: "absolute", bottom: 20, width: "100%", flexDirection: "row", justifyContent: "space-around", alignItems: "center"}}
       >
         <TextInput 
-          placeholder="Nouvelle tache..." 
+          placeholder="Nouvelle tâche..." 
           style={{backgroundColor: "white", padding: 15, borderRadius: 50, width: "70%"}}
           onChangeText={text => setTache(text)}
           value={tache}
@@ -58,7 +61,7 @@ export default function App() {
           style={{backgroundColor: "white", height: 40, width: 40, borderRadius: 100, justifyContent: "center", alignItems: "center"}}
           onPress={() => clickAdd()}
         >
-          <Text style={{fontSize: 22, fontWeight: "bold"}}>+</Text>
+          <Ionicons name="add" size={26} color="black"/>
         </TouchableOpacity>
 
       </KeyboardAvoidingView>
